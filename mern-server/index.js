@@ -41,6 +41,7 @@ async function run() {
     })
 
     //to get data from the database 
+    
     app.get('/all-books',async (req,res)=>{  //read oparation 
        const books=bookCollections.find();
        const result=await books.toArray();
@@ -96,4 +97,4 @@ async function run() {
 run().catch(console.dir);
 
 
-app.listen(3000);
+app.listen(5000);
