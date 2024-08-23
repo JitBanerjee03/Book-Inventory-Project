@@ -48,6 +48,13 @@ async function run() {
        res.send(result);
     })
 
+    app.get('/book/:id',async(req,res)=>{
+      const id=req.params.id;
+      const filter={_id: new ObjectId(id)};
+      const result=await bookCollections.findOne(filter);
+      res.send(result);
+    })
+
     //update a book data that is present in the data base using patch or update method
     app.patch('/book/:id',async (req,res)=>{
        const id=req.params.id;
